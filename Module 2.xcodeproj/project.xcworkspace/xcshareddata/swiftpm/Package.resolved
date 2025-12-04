@@ -1,0 +1,15 @@
+{
+  "originHash" : "f12aa5928a41e12d43418496cb7d0694b5b02a4ae55dee235b87ab15d8724b25",
+  "pins" : [
+    {
+      "identity" : "cybersecurity-02-fancy-text",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/developer-academy-unina/Cybersecurity-02-fancy-text",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9eb58923dbd4aef3d810b477e42339f33be4d35c"
+      }
+    }
+  ],
+  "version" : 3
+}

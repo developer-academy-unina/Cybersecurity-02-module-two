@@ -1,5 +1,4 @@
 import SwiftUI
-//import LocalAuthentication
 
 struct FaceIDDemo: View {
     @State private var secret = ""
@@ -7,8 +6,6 @@ struct FaceIDDemo: View {
     @State private var errorMessage = ""
 
     private let account = "faceid-demo-secret"
-
-    //    private let context = LAContext()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -81,27 +78,11 @@ struct FaceIDDemo: View {
         errorMessage = ""
 
         do {
-            secret = try getItem()
+            secret = try KeychainService.get(account: account)
         } catch {
             errorMessage = error.localizedDescription
         }
     }
-
-    private func getItem() throws -> String {
-        return try KeychainService.get(account: account)
-    }
-
-    //    private func getItem() async throws -> String {
-    //        try await context.evaluatePolicy(
-    //            .deviceOwnerAuthenticationWithBiometrics,
-    //            localizedReason: "Unlock your protected secret"
-    //        )
-    //
-    //        return try KeychainService.get(
-    //            account: account,
-    //            context: context
-    //        )
-    //    }
 }
 
 #Preview {

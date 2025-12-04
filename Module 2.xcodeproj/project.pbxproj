@@ -25,6 +25,7 @@
 		9E9843572ECB773700B26440 /* FancyText in Frameworks */ = {isa = PBXBuildFile; productRef = 9E9843562ECB773700B26440 /* FancyText */; };
 		9EB358862ED8F8D70091E15B /* SecretBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB358852ED8F7E90091E15B /* SecretBox.swift */; };
 		9EB358882ED972DA0091E15B /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB358872ED972DA0091E15B /* WeatherCard.swift */; };
+		9EE9D4962EDFD0E4005B38C1 /* FancyText in Frameworks */ = {isa = PBXBuildFile; productRef = 9EE9D4952EDFD0E4005B38C1 /* FancyText */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 				9E30F4FD2ECB78AE000F70F4 /* FancyText in Frameworks */,
 				9E5AA6132EDA2DCF00E67448 /* FancyText in Frameworks */,
 				9E677D282EC666030051D93A /* FancyText in Frameworks */,
+				9EE9D4962EDFD0E4005B38C1 /* FancyText in Frameworks */,
 				9E9843542ECB759C00B26440 /* FancyText in Frameworks */,
 				9E9843512ECB74DF00B26440 /* FancyText in Frameworks */,
 				9E9843572ECB773700B26440 /* FancyText in Frameworks */,
@@ -134,6 +136,7 @@
 				9E9843562ECB773700B26440 /* FancyText */,
 				9E30F4FC2ECB78AE000F70F4 /* FancyText */,
 				9E5AA6122EDA2DCF00E67448 /* FancyText */,
+				9EE9D4952EDFD0E4005B38C1 /* FancyText */,
 			);
 			productName = "Module 2";
 			productReference = 9E1AB2ED2EC63B3E003878AD /* Module 2.app */;
@@ -164,7 +167,7 @@
 			mainGroup = 9E1AB2E42EC63B3E003878AD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				9E5AA6112EDA2DCF00E67448 /* XCLocalSwiftPackageReference "../fancy-text" */,
+				9EE9D4942EDFD0E4005B38C1 /* XCRemoteSwiftPackageReference "Cybersecurity-02-fancy-text" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9E1AB2EE2EC63B3E003878AD /* Products */;
@@ -413,12 +416,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		9E5AA6112EDA2DCF00E67448 /* XCLocalSwiftPackageReference "../fancy-text" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../fancy-text";
+/* Begin XCRemoteSwiftPackageReference section */
+		9EE9D4942EDFD0E4005B38C1 /* XCRemoteSwiftPackageReference "Cybersecurity-02-fancy-text" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/developer-academy-unina/Cybersecurity-02-fancy-text";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		9E30F4FC2ECB78AE000F70F4 /* FancyText */ = {
@@ -443,6 +450,11 @@
 		};
 		9E9843562ECB773700B26440 /* FancyText */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = FancyText;
+		};
+		9EE9D4952EDFD0E4005B38C1 /* FancyText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EE9D4942EDFD0E4005B38C1 /* XCRemoteSwiftPackageReference "Cybersecurity-02-fancy-text" */;
 			productName = FancyText;
 		};
 /* End XCSwiftPackageProductDependency section */

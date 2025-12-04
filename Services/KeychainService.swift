@@ -59,19 +59,13 @@ enum KeychainService {
 
     static func get(
         account: String,
-        context: LAContext? = nil
     ) throws -> String {
 
-        var query: [String: Any] = [
+        let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: account,
             kSecReturnData as String: true,
         ]
-
-        // ✅ Only add Face ID context if provided
-        if let context {
-            query[kSecUseAuthenticationContext as String] = context
-        }
 
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
