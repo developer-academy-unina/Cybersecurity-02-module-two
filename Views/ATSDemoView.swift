@@ -26,15 +26,16 @@ struct ATSDemoView: View {
         .padding()
     }
 
-    func fetchResult() async -> String {
-        let url = URL(string: "http://badssl.com")!
+}
 
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            return "Succeeded: \(data.count) bytes"
-        } catch {
-            return error.localizedDescription
-        }
+func fetchResult() async -> String {
+    let url = URL(string: "http://badssl.com")!
+
+    do {
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return "Succeeded: \(data.count) bytes"
+    } catch {
+        return error.localizedDescription
     }
 }
 

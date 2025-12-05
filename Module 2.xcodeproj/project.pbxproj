@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E08D3DB2EE3269B00803B12 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E08D3DA2EE3268300803B12 /* APIError.swift */; };
+		9E08D3DC2EE326A400803B12 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E08D3D92EE3267500803B12 /* WeatherResponse.swift */; };
 		9E30F4FD2ECB78AE000F70F4 /* FancyText in Frameworks */ = {isa = PBXBuildFile; productRef = 9E30F4FC2ECB78AE000F70F4 /* FancyText */; };
 		9E30F5022ECB86EA000F70F4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E30F4FF2ECB79CD000F70F4 /* KeychainService.swift */; };
 		9E5AA6102EDA19CC00E67448 /* ATSDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5AA60F2EDA19CC00E67448 /* ATSDemoView.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E08D3D92EE3267500803B12 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		9E08D3DA2EE3268300803B12 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		9E1AB2ED2EC63B3E003878AD /* Module 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E30F4FF2ECB79CD000F70F4 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		9E5AA60F2EDA19CC00E67448 /* ATSDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATSDemoView.swift; sourceTree = "<group>"; };
@@ -62,9 +66,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E08D3D82EE3267200803B12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E08D3DA2EE3268300803B12 /* APIError.swift */,
+				9E08D3D92EE3267500803B12 /* WeatherResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9E1AB2E42EC63B3E003878AD = {
 			isa = PBXGroup;
 			children = (
+				9E08D3D82EE3267200803B12 /* Models */,
 				9EB358842ED8F7D80091E15B /* Components */,
 				9E98433C2ECB6C5E00B26440 /* AppInfo.swift */,
 				9E9843422ECB6C5E00B26440 /* Module_2App.swift */,
@@ -200,6 +214,8 @@
 				9EB358862ED8F8D70091E15B /* SecretBox.swift in Sources */,
 				9E5AA6102EDA19CC00E67448 /* ATSDemoView.swift in Sources */,
 				9E9843492ECB6C5E00B26440 /* FaceIDDemo.swift in Sources */,
+				9E08D3DC2EE326A400803B12 /* WeatherResponse.swift in Sources */,
+				9E08D3DB2EE3269B00803B12 /* APIError.swift in Sources */,
 				9E30F5022ECB86EA000F70F4 /* KeychainService.swift in Sources */,
 				9E98434A2ECB6C5E00B26440 /* FancyTextView.swift in Sources */,
 				9E98434B2ECB6C5E00B26440 /* FrontEndOnlyAuthView.swift in Sources */,
