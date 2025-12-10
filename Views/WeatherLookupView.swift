@@ -1,24 +1,5 @@
+import Foundation
 import SwiftUI
-
-struct WeatherResponse: Decodable {
-    let name: String
-    let main: Main
-    let weather: [Weather]
-
-    struct Main: Decodable {
-        let temp: Double
-        let temp_min: Double
-        let temp_max: Double
-    }
-
-    struct Weather: Decodable {
-        let description: String
-    }
-}
-
-struct APIError: Decodable, Error {
-    let message: String
-}
 
 struct WeatherLookupView: View {
     @State private var city = ""
@@ -37,7 +18,8 @@ struct WeatherLookupView: View {
             TextField("Enter city", text: $city)
                 .textFieldStyle(.roundedBorder)
                 .textInputAutocapitalization(.words)
-                .font(.system(size: 22, weight: .medium))
+                .font(.system(size: 24, weight: .medium))
+                .frame(height: 40)
 
             Button {
                 Task {
@@ -68,6 +50,7 @@ struct WeatherLookupView: View {
         .padding()
     }
 
+    @MainActor
     func getWeather() async {
         isLoading = true
         errorMessage = nil
@@ -76,30 +59,30 @@ struct WeatherLookupView: View {
         defer { isLoading = false }
 
         do {
-            weatherResp = try await fetchWeatherResponse()
+            weatherResp = try await fetchWeatherResponse(city: city)
         } catch {
             errorMessage =
                 (error as? APIError)?.message ?? "Could not load weather"
         }
     }
+}
 
-    func fetchWeatherResponse() async throws -> WeatherResponse {
-        let urlString =
-            "\(AppInfo.openWeatherURL)?q=\(city)&appid=\(AppInfo.openWeatherKey)&units=metric"
+func fetchWeatherResponse(city: String) async throws -> WeatherResponse {
+    let urlString =
+        "\(AppInfo.openWeatherURL)?q=\(city)&appid=\(AppInfo.openWeatherKey)&units=metric"
 
-        let url = URL(string: urlString)!
+    let url = URL(string: urlString)!
 
-        let (data, response) = try await URLSession.shared.data(from: url)
+    let (data, response) = try await URLSession.shared.data(from: url)
 
-        guard let http = response as? HTTPURLResponse,
-            http.statusCode == 200
-        else {
-            let apiError = try JSONDecoder().decode(APIError.self, from: data)
-            throw apiError
-        }
-
-        return try JSONDecoder().decode(WeatherResponse.self, from: data)
+    guard let http = response as? HTTPURLResponse,
+        http.statusCode == 200
+    else {
+        let apiError = try JSONDecoder().decode(APIError.self, from: data)
+        throw apiError
     }
+
+    return try JSONDecoder().decode(WeatherResponse.self, from: data)
 }
 
 #Preview {

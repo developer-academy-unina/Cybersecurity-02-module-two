@@ -49,15 +49,15 @@ In this workshop, you will:
 - Demonstrates risks associated with cleartext (HTTP) communication  
 - Highlights platform-level security enforcement  
 
-### 🧑‍💻 Face ID Demo
-- Demonstrates biometric authentication using Face ID  
-- Introduces secure, hardware-backed user verification  
-- Shows how Local Authentication protects sensitive actions  
-
 ### 📦 Compromised Library (FancyText)
 - Mock third-party library used to illustrate dependency trust issues  
 - Demonstrates how compromised packages can impact application behavior  
 - Explores supply-chain vulnerability concepts  
+
+### 🧑‍💻 Face ID Demo
+- Demonstrates biometric authentication using Face ID  
+- Introduces secure, hardware-backed user verification  
+- Shows how Local Authentication protects sensitive actions  
 
 ### ☀️ Weather Lookup
 - Performs network requests to a remote weather API  

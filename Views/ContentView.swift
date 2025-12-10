@@ -14,12 +14,12 @@ struct ContentView: View {
                     destination: ATSDemoView()
                 )
                 NavigationLink(
-                    "Face ID Demo",
-                    destination: FaceIDDemo()
+                    "FancyText Demo",
+                    destination: FancyTextView()
                 )
                 NavigationLink(
-                    "Compromised Library",
-                    destination: FancyTextView()
+                    "Face ID Demo",
+                    destination: FaceIDDemo()
                 )
                 NavigationLink(
                     "Weather Lookup",

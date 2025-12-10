@@ -74,6 +74,7 @@ struct FrontendOnlyAuthView: View {
         .padding()
     }
 
+    @MainActor
     func getAdminData() async {
         guard !isLoading else { return }
 
@@ -88,15 +89,15 @@ struct FrontendOnlyAuthView: View {
             errorMessage = "Failed to load admin data"
         }
     }
+}
 
-    func fetchAdminData() async throws -> AdminData {
-        let url = URL(string: "https://mod2-server.onrender.com/admin/data")!
-        let request = URLRequest(url: url)
+func fetchAdminData() async throws -> AdminData {
+    let url = URL(string: "https://mod2-server.onrender.com/admin/data")!
+    let request = URLRequest(url: url)
+    
+    let (data, _) = try await URLSession.shared.data(for: request)
 
-        let (data, _) = try await URLSession.shared.data(for: request)
-
-        return try JSONDecoder().decode(AdminData.self, from: data)
-    }
+    return try JSONDecoder().decode(AdminData.self, from: data)
 }
 
 #Preview {
